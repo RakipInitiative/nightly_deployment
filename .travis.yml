@@ -5,8 +5,8 @@ os:
 language: bash
 
 script:
-- if [[ $TRAVIS_OS_NAME != 'windows' ]]; then phpenv config-rm xdebug.ini || true; fi
-
+- if [[ $TRAVIS_OS_NAME == 'windows' ]]; then bash deploy_test_win.sh || true; fi
+- if [[ $TRAVIS_OS_NAME == 'linux' ]]; then bash deploy_test_linux.sh || true; fi
 before_install:
 # Install R 3.2 instead of R 3.0 from base Ubuntu
 - |
