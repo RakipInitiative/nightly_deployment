@@ -1,11 +1,10 @@
-#FOLDER="$TRAVIS_BUILD_DIR/de.bund.bfr.knime.update/target/repository"
 KNIME_FILE="knime_3.7.2.linux.gtk.x86_64.tar.gz"
 wget -q "http://download.knime.org/analytics-platform/linux/$KNIME_FILE"
 tar -xzf $KNIME_FILE
 rm $KNIME_FILE
 
 KNIME37="https://update.knime.org/analytics-platform/3.7"
-OLD_FSK="https://dl.bintray.com/silebat/fsklab_test"
+#OLD_FSK="https://dl.bintray.com/silebat/fsklab_test"
 NEW_FSK="https://dl.bintray.com/silebat/test2"
 
 WF_REP="https://dl.bintray.com/silebat/build_pipeline_test_wf"
