@@ -10,6 +10,7 @@ script:
 - bash deploy_test_linux.sh
 
 before_install:
+- chmod +x deploy_test_linux.sh
 # Install R 3.2 instead of R 3.0 from base Ubuntu
 - |
   if [[ $TRAVIS_OS_NAME == 'osx' ]]
