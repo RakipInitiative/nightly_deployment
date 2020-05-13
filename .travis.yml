@@ -1,0 +1,30 @@
+os: 
+- linux
+- windows
+
+language: bash
+
+script:
+- if [[ $TRAVIS_OS_NAME != 'windows' ]]; then phpenv config-rm xdebug.ini || true; fi
+
+before_install:
+# Install R 3.2 instead of R 3.0 from base Ubuntu
+- |
+  if [[ $TRAVIS_OS_NAME != 'linux' ]]
+  then
+    sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+    sudo apt-get --allow-unauthenticated update -qq
+    sudo apt-get --allow-unauthenticated install r-base -qq
+    # Install packages
+    sudo apt-get install libcurl4-openssl-dev libxml2-dev libssl-dev -qq
+    sudo R --vanilla -e 'install.packages(c("Rserve", "miniCRAN", "ggplot2", "svglite"), repos="https://cran.rstudio.com", Ncpus=2)'
+    chmod +x deploy_test_linux.sh
+  fi
+  
+- |
+  if [[ $TRAVIS_OS_NAME != 'windows' ]]
+  then
+    chmod +x deploy_test_win.sh
+  fi
+  
+      
