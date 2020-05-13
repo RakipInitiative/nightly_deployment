@@ -1,7 +1,7 @@
 os: 
 - linux
 - windows
-
+dist: trusty
 language: bash
 
 script:
