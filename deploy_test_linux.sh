@@ -1,5 +1,7 @@
 KNIME_FILE="knime_3.7.2.linux.gtk.x86_64.tar.gz"
 wget -q "http://download.knime.org/analytics-platform/linux/$KNIME_FILE"
+echo $KNIME_FILE
+
 tar -xzf $KNIME_FILE
 rm $KNIME_FILE
 
