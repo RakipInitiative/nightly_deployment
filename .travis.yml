@@ -10,7 +10,7 @@ script:
 before_install:
 # Install R 3.2 instead of R 3.0 from base Ubuntu
 - |
-  if [[ $TRAVIS_OS_NAME != 'linux' ]]
+  if [[ $TRAVIS_OS_NAME == 'linux' ]]
   then
     sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
     sudo apt-get --allow-unauthenticated update -qq
@@ -22,7 +22,7 @@ before_install:
   fi
   
 - |
-  if [[ $TRAVIS_OS_NAME != 'windows' ]]
+  if [[ $TRAVIS_OS_NAME == 'windows' ]]
   then
     chmod +x deploy_test_win.sh
   fi
