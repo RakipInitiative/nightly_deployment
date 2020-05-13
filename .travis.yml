@@ -8,6 +8,10 @@ language: java
 script:
 #- if [[ $TRAVIS_OS_NAME == 'windows' ]]; then bash deploy_test_win.sh; fi
 #- if [[ $TRAVIS_OS_NAME == 'linux' ]]; then bash deploy_test_linux.sh; fi
+- KNIME_FILE="knime_3.7.2.linux.gtk.x86_64.tar.gz"
+- wget -q "http://download.knime.org/analytics-platform/linux/$KNIME_FILE"
+- tar -xzf $KNIME_FILE
+- rm $KNIME_FILE
 - bash deploy_test_linux.sh
 
 before_install:
