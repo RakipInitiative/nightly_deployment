@@ -4,8 +4,8 @@ tar -xzf $KNIME_FILE
 rm $KNIME_FILE
 
 KNIME37="https://update.knime.org/analytics-platform/3.7"
-OLD_FSK="https://dl.bintray.com/silebat/test2"
-NEW_FSK="https://dl.bintray.com/silebat/test2"
+OLD_FSK="https://dl.bintray.com/silebat/nightly"
+NEW_FSK="https://dl.bintray.com/silebat/nightly"
 
 WF_REP="https://dl.bintray.com/silebat/build_pipeline_test_wf"
 WF_ZIP_FOLDER="wf.zip"
