@@ -7,9 +7,9 @@ echo $KNIME_FILE
 rm $KNIME_FILE
 
 KNIME37="https://update.knime.org/analytics-platform/3.7"
-OLD_FSK="https://dl.bintray.com/silebat/fsklab_icpmf"
+OLD_FSK="https://dl.bintray.com/silebat/test2"
 
-NEW_FSK="https://dl.bintray.com/silebat/fsklab_icpmf"
+NEW_FSK="https://dl.bintray.com/silebat/test2"
 
 
 
@@ -54,7 +54,7 @@ rm -r knime_3.7.2
 
 # -------------------------------------------DO THE SAME FOR KNIME 4.1.2 -------------------------------------------------------------------
 
-KNIME_FILE="knime_4.1.2.linux.gtk.x86_64.tar.gz"
+KNIME_FILE="knime_4.1.2.win32.win32.x86_64.zip"
 wget -q "http://download.knime.org/analytics-platform/win/$KNIME_FILE" 
 unzip -q "$KNIME_FILE" 
 echo $KNIME_FILE
@@ -95,5 +95,5 @@ for WF in $WF_FILES
 	done
 
 echo "CLEANING KNIME"
-rm -r knime_3.7.2 
+rm -r knime_4.1.2 
 rm -r wf 
