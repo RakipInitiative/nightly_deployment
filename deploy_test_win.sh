@@ -23,7 +23,7 @@ KNIME_SUCCESS="Workflow executed sucessfully"
 
 
 echo "INSTALL NEW FSK-LAB INTO FRESH KNIME"
-knime_3.7.2/knime -nosplash -application org.eclipse.equinox.p2.director -repository "$KNIME37,$NEW_FSK" -installIU org.knime.features.testingapplication.feature.group,de.bund.bfr.knime.fsklab.feature.feature.group,de.bund.bfr.knime.r.x64.feature.feature.group
+knime_3.7.2/knime -nosplash -application org.eclipse.equinox.p2.director -repository "$KNIME37,$NEW_FSK" -installIU org.knime.features.testingapplication.feature.group,de.bund.bfr.knime.fsklab.feature.feature.group,de.bund.bfr.knime.r.x64.feature.feature.group,de.bund.bfr.knime.foodprocess.feature.feature.group,de.bund.bfr.knime.pmm.feature.feature.group
 
 for WF in $WF_FILES
   do
