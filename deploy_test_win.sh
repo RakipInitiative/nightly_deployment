@@ -7,9 +7,9 @@ echo $KNIME_FILE
 rm $KNIME_FILE
 
 KNIME37="https://update.knime.org/analytics-platform/3.7"
-OLD_FSK="https://dl.bintray.com/silebat/nightly"
+OLD_FSK="https://dl.bintray.com/silebat/test2"
 
-NEW_FSK="https://dl.bintray.com/silebat/nightly"
+NEW_FSK="https://dl.bintray.com/silebat/test2"
 
 
 

@@ -4,8 +4,8 @@ tar -xzf $KNIME_FILE
 rm $KNIME_FILE
 
 KNIME37="https://update.knime.org/analytics-platform/3.7"
-OLD_FSK="https://dl.bintray.com/silebat/nightly"
-NEW_FSK="https://dl.bintray.com/silebat/nightly"
+OLD_FSK="https://dl.bintray.com/silebat/test2"
+NEW_FSK="https://dl.bintray.com/silebat/test2"
 
 WF_REP="https://dl.bintray.com/silebat/build_pipeline_test_wf"
 WF_ZIP_FOLDER="wf.zip"
@@ -27,7 +27,7 @@ knime_3.7.2/knime -application org.eclipse.equinox.p2.director -repository "$KNI
 for WF in $WF_FILES
 	do
 		KNIME_OUT=$(knime_3.7.2/knime -nosplash -reset -nosave -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="$WF" --launcher.suppressErrors)
-  		if [[ "$KNIME_OUT" != *"$KNIME_SUCCESS"* ]]; then  echo "Workflow failed";exit 1; else echo "3.7.2 WORKFLOW SUCCESSFUL ON FRESH INSTALL"; fi
+  		if [[ "$KNIME_OUT" != *"$KNIME_SUCCESS"* ]]; then  echo "$WF FAILED ON FRESH 3.7.2";exit 1; else echo "3.7.2 WORKFLOW $WF SUCCESSFUL ON FRESH INSTALL"; fi
   		rm outfile.table
 	done
 
@@ -44,7 +44,7 @@ knime_3.7.2/knime -application org.eclipse.equinox.p2.director -repository "$KNI
 for WF in $WF_FILES
 	do
 		KNIME_OUT=$(knime_3.7.2/knime -nosplash -reset -nosave -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="$WF" --launcher.suppressErrors)
-		if [[ "$KNIME_OUT" != *"$KNIME_SUCCESS"* ]]; then  echo "Workflow failed";exit 1; else echo "3.7.2 WORKFLOW SUCCESSFUL ON UPDATE"; fi
+		if [[ "$KNIME_OUT" != *"$KNIME_SUCCESS"* ]]; then  echo "$WF FAILED ON UPDATE 3.7.2";exit 1; else echo "3.7.2 WORKFLOW $WF SUCCESSFUL ON UPDATE"; fi
   		rm outfile.table
 	done
 
@@ -71,7 +71,7 @@ for WF in $WF_FILES
 	do
 		$KNIME_FOLDER/knime -nosplash -reset -nosave -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="$WF" --launcher.suppressErrors
   		OUTFILE=outfile.table
-  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON FRESH $KNIME_FOLDER"; else echo "$WF FAILED ON $KNIME_FOLDER";exit 1; fi
+  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON FRESH $KNIME_FOLDER"; else echo "$WF FAILED ON FRESH $KNIME_FOLDER";exit 1; fi
   		rm outfile.table
 	done
 
@@ -91,7 +91,7 @@ for WF in $WF_FILES
 	do
 		$KNIME_FOLDER/knime -nosplash -reset -nosave -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="$WF" --launcher.suppressErrors 
 		OUTFILE=outfile.table
-  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON UPDATE $KNIME_FOLDER"; else echo "$WF FAILED ON $KNIME_FOLDER";exit 1; fi
+  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON UPDATE $KNIME_FOLDER"; else echo "$WF FAILED ON UPDATE $KNIME_FOLDER";exit 1; fi
   		rm outfile.table
 	done
 
