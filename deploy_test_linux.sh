@@ -21,7 +21,8 @@ KNIME_SUCCESS="Workflow executed sucessfully"
 echo "================== TESTING THE FRESH INSTALL OF FSK-LAB of KNIME 3.7.2 ==============================================================="
 
 echo "INSTALL NEW FSK-LAB INTO FRESH KNIME"
-knime_3.7.2/knime -application org.eclipse.equinox.p2.director -repository "$KNIME37,$NEW_FSK" -installIU de.bund.bfr.knime.fsklab.feature.feature.group,org.knime.features.testingapplication.feature.group,de.bund.bfr.knime.foodprocess.feature.feature.group,de.bund.bfr.knime.pmm.feature.feature.group
+knime_3.7.2/knime -application org.eclipse.equinox.p2.director -repository "$KNIME37,$NEW_FSK" -installIU org.knime.features.testingapplication.feature.group
+knime_3.7.2/knime -application org.eclipse.equinox.p2.director -repository "$KNIME37,$NEW_FSK" -installIU de.bund.bfr.knime.fsklab.feature.feature.group,de.bund.bfr.knime.foodprocess.feature.feature.group,de.bund.bfr.knime.pmm.feature.feature.group
 
 for WF in $WF_FILES
 	do
@@ -63,7 +64,8 @@ KNIME41="https://update.knime.com/analytics-platform/4.1"
 
 echo "================== TESTING THE FRESH INSTALL OF FSK-LAB of KNIME 4.1.2 ==============================================================="
 echo "INSTALL NEW FSK-LAB INTO FRESH KNIME"
-$KNIME_FOLDER/knime -application org.eclipse.equinox.p2.director -repository "$KNIME41,$NEW_FSK" -installIU de.bund.bfr.knime.fsklab.feature.feature.group,org.knime.features.testing.application.feature.group,de.bund.bfr.knime.foodprocess.feature.feature.group,de.bund.bfr.knime.pmm.feature.feature.group
+$KNIME_FOLDER/knime -application org.eclipse.equinox.p2.director -repository "$KNIME41" -installIU org.knime.features.testing.application.feature.group
+$KNIME_FOLDER/knime -application org.eclipse.equinox.p2.director -repository "$KNIME41,$NEW_FSK" -installIU de.bund.bfr.knime.fsklab.feature.feature.group,de.bund.bfr.knime.foodprocess.feature.feature.group,de.bund.bfr.knime.pmm.feature.feature.group
 
 for WF in $WF_FILES
 	do
