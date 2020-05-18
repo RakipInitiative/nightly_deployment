@@ -11,8 +11,9 @@ WF_REP="https://dl.bintray.com/silebat/build_pipeline_test_wf"
 WF_ZIP_FOLDER="wf.zip"
 wget -q $WF_REP/$WF_ZIP_FOLDER
 
-unzip $WF_ZIP_FOLDER 
+unzip $WF_ZIP_FOLDER
 rm $WF_ZIP_FOLDER
+
 
 WF_FILES=wf/*
 KNIME_SUCCESS="Workflow executed sucessfully"
