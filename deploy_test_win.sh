@@ -15,7 +15,7 @@ NEW_FSK="https://dl.bintray.com/silebat/test2"
 
 WF_ZIP="wf.zip"
 wget -q https://dl.bintray.com/silebat/build_pipeline_test_wf/$WF_ZIP
-unzip $WF_ZIP
+unzip $WF_ZIP -d wf
 rm $WF_ZIP
 WF_FILES=wf/*
 KNIME_SUCCESS="Workflow executed sucessfully"
