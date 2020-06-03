@@ -94,7 +94,7 @@ for WF in $WF_FILES
 	do
 		$KNIME_FOLDER/knime -nosplash -reset -nosave -application org.knime.product.KNIME_BATCH_APPLICATION -workflowFile="$WF" --launcher.suppressErrors 
 		OUTFILE=outfile.table
-  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON FRESH $KNIME_FOLDER"; else echo "$WF FAILED ON $KNIME_FOLDER";exit 1; fi
+  		if test -f "$OUTFILE"; then echo "$WF SUCCESS ON UPDATE $KNIME_FOLDER"; else echo "$WF FAILED ON UPDATE $KNIME_FOLDER";exit 1; fi
   		rm outfile.table
 	done
 
